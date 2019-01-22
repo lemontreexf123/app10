@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using Android.Graphics;
 
 namespace App10
 {
@@ -11,6 +12,7 @@ namespace App10
     {
         private LinearLayout overlayLayout;
         private ProgressBar progressBar;
+        private TextView description;
         private Button switchBtn;
         private bool isShown;
 
@@ -22,6 +24,11 @@ namespace App10
             // Instantiate the layout
             overlayLayout =  FindViewById<LinearLayout>(Resource.Id.overlayLayout);
             progressBar =  FindViewById<ProgressBar>(Resource.Id.overlayProgressBar);
+            description = FindViewById<TextView>(Resource.Id.textView1);
+            description.Text = "Waiting for GPS";
+            description.SetBackgroundColor(Color.Aqua);
+            progressBar.SetBackgroundColor(Color.Red);
+
             switchBtn = FindViewById<Button>(Resource.Id.switchButton);
 
             switchBtn.Click += SwitchBtn_Click;
